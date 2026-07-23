@@ -50,3 +50,6 @@ assumptions and exclusions are documented in
 
 Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md).
 Do not disclose an uncoordinated vulnerability in a public issue.
+Contributions and pull requests are not solicited.
+This downstream snapshot is generated from Continuo's private authoritative
+repository.
