@@ -120,7 +120,18 @@ public final class SecurityHandshakeChannel: @unchecked Sendable {
                     return
                 }
             }
-            guard error == nil, !isComplete else { return }
+            // Ending the loop is not the same as closing the channel: without
+            // this the connection is abandoned while `send()` still believes it
+            // is live, and the channel stays "open" forever. Both exits route
+            // through `failClosed` so the state and the connection agree.
+            if let error {
+                self.failClosed(reason: "receive failed (\(error.debugDescription))", byteCount: 0)
+                return
+            }
+            if isComplete {
+                self.failClosed(reason: "peer closed the handshake connection", byteCount: 0)
+                return
+            }
             self.receiveLoop()
         }
     }

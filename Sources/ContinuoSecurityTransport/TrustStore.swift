@@ -164,7 +164,7 @@ public final class KeychainPinStore: PinStore, @unchecked Sendable {
                         removeFrom(service: legacyService, machineID: legacy.machineID)
                         peers.append(legacy)
                         known.insert(legacy.machineID)
-                        Self.log.info("pin migrated from legacy keychain service")
+                        Self.log.notice("pin migrated from legacy keychain service")
                     }
                 }
             }
@@ -628,7 +628,7 @@ public enum IdentityFactory {
                  kSecAttrLabel as String: legacy] as CFDictionary,
                 [kSecAttrLabel as String: label] as CFDictionary)
             if update == errSecSuccess, let migrated = copyKey(label: label) {
-                Self.log.info("identity key migrated from legacy keychain label")
+                Self.log.notice("identity key migrated from legacy keychain label")
                 return migrated
             }
             Self.log.error("identity key migration failed: OSStatus \(update, privacy: .public)")

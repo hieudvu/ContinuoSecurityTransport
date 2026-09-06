@@ -71,7 +71,12 @@ public final class UnpinnedPairingRegistry: @unchecked Sendable {
 
     fileprivate func expire(id: UUID, nowNanos: UInt64) -> Bool {
         state.withLock { state in
+            // `nowNanos >= startedAtNanos` first, matching the sweep above. On its
+            // own the `&-` wraps to a colossal value whenever the clock sample
+            // precedes the record, which expires a FRESH attempt rather than a
+            // stale one — the opposite of what this function is for.
             guard let record = state.records[id],
+                  nowNanos >= record.startedAtNanos,
                   nowNanos &- record.startedAtNanos >= lifetimeNanos
             else {
                 return false

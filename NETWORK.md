@@ -29,11 +29,20 @@ category, disablement, and whether it includes input content.
 - **Can disable?:** Avoid the fallback or manual GitHub download
 - **Input content?:** No
 
-### `api.lemonsqueezy.com` (and related Lemon Squeezy hosts)
+### `api.polar.sh` (and related Polar hosts)
 
-- **Purpose:** Validate Continuo Pro licence keys
-- **Trigger:** Entering or refreshing a licence in Settings
-- **Payload:** Licence key, product identifier, and activation metadata
+- **Purpose:** Payment checkout and the licence customer portal, in a browser
+- **Trigger:** A user opens Buy Pro, a Mac seat add-on, or the customer portal, each of which opens a browser
+- **Payload:** Payment and account data, handled entirely by Polar
+- **Can disable?:** Yes: nothing here runs unless a purchase or portal link is opened
+- **Input content?:** No
+- **Note:** The application itself never contacts Polar. Licence validation and activation go to the `usecontinuo.app` endpoint below, and only that server talks to Polar. No product identifier is sent from this Mac.
+
+### `usecontinuo.app` `/api/license/*`
+
+- **Purpose:** Validate, activate, restore, and deactivate this Mac's Continuo Pro licence, and list the Macs on it
+- **Trigger:** Entering or refreshing a licence in Settings, restoring after a reinstall, activating another Mac, or freeing a seat
+- **Payload:** Licence key, one-way device hash, device name, and the signed entitlement response
 - **Can disable?:** Yes: stay on the Free tier
 - **Input content?:** No
 
@@ -75,6 +84,6 @@ The security transport package itself adds no analytics or telemetry endpoint.
 The destinations above describe expected application flows and must be checked
 against the signed release with traffic capture before public launch.
 
-Browser visits to the marketing site, support email, and Lemon Squeezy checkout
+Browser visits to the marketing site, support email, and Polar checkout
 are user-directed website or third-party flows rather than app transport. They
 carry only information the user or browser supplies, never peer input content.
