@@ -29,8 +29,9 @@ records maintained in Continuo's private development repository remain
 authoritative. Generated-mirror changes must be made upstream and regenerated
 rather than treated as product-source changes.
 
-The evaluation terms are a private counsel-review draft. They are not legal
-approval and are not approved for public release. Review [LICENSE](LICENSE)
+This snapshot is published for security evaluation under the Continuo Security
+Evaluation License. It grants inspection, building, and testing rights only —
+not production use, redistribution, or trademark use. Review [LICENSE](LICENSE)
 before using the package.
 
 ## Scope

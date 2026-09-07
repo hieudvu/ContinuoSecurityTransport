@@ -5,5 +5,6 @@ This directory is an input to a generated downstream security mirror of source
 maintained in Continuo's private development repository. A generated snapshot
 does not replace the authoritative upstream source or release records.
 
-Private mirror only. The accompanying evaluation license is a draft for counsel
-review and is not approved for public release.
+Published for security evaluation under the accompanying Continuo Security
+Evaluation License. That license grants inspection and testing rights only; it
+grants no production, redistribution, or trademark rights.

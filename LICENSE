@@ -1,9 +1,5 @@
 CONTINUO SECURITY EVALUATION LICENSE
-DRAFT FOR COUNSEL REVIEW — PRIVATE MIRROR ONLY
-NOT APPROVED FOR PUBLIC RELEASE
-
-This document is a private legal-review candidate. It is not legal approval and
-does not authorize a public launch or public distribution.
+Version 1.0, 6 September 2026
 
 Copyright (c) 2026 Hieu Vu trading as Continuo. All rights reserved.
 
@@ -11,11 +7,11 @@ Copyright (c) 2026 Hieu Vu trading as Continuo. All rights reserved.
 
 "Licensor" means Hieu Vu trading as Continuo. "Software" means the
 ContinuoSecurityTransport source, tests, documentation, and notices supplied
-with this draft.
+with this License.
 
 2. Limited security-evaluation permission
 
-Subject to this draft's terms, Licensor grants the recipient a limited,
+Subject to the terms of this License, Licensor grants the recipient a limited,
 revocable, non-exclusive, non-transferable, non-sublicensable permission to
 inspect, copy, modify, compile, execute, instrument, fuzz, and perform
 non-production testing of the Software solely for security evaluation and
@@ -30,7 +26,7 @@ those purposes.
 No permission is granted for production use; incorporation into a product or
 service; competitive reuse; redistribution; binary distribution; use of any
 Continuo name, logo, or trademark; or sublicensing. Except for the limited
-permission in Section 2, all rights are reserved. This draft is not an
+permission in Section 2, all rights are reserved. This License is not an
 open-source license.
 
 4. Vulnerability reporting
@@ -43,8 +39,8 @@ coordinated-disclosure timing.
 5. Third-party and statutory rights
 
 Applicable third-party license terms remain in effect for third-party material,
-if any, and are not replaced or restricted by this draft. Nothing in this draft
-limits rights that cannot lawfully be waived or restricted, including
+if any, and are not replaced or restricted by this License. Nothing in this
+License limits rights that cannot lawfully be waived or restricted, including
 applicable statutory rights.
 
 6. No warranty
@@ -54,9 +50,3 @@ CONDITIONS OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS
 FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. TO THE MAXIMUM EXTENT
 PERMITTED BY LAW, LICENSOR IS NOT LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
 LIABILITY ARISING FROM OR RELATED TO THE SOFTWARE OR ITS EVALUATION.
-
-7. Draft status
-
-These terms remain subject to counsel review. Distribution of this draft does
-not represent approval for public release, and no broader permission may be
-inferred from access to a private mirror.
