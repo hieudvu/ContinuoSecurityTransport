@@ -441,7 +441,8 @@ public enum IdentityFactory {
         return try makeSelfSigned(label: label, privateKey: privateKey)
     }
 
-    private static func makeSelfSigned(label: String, privateKey: SecKey) throws
+    /// Hand-builds a self-signed certificate over `privateKey` and pairs the two.
+    public static func makeSelfSigned(label: String, privateKey: SecKey) throws
         -> (identity: SecIdentity, spkiDER: [UInt8]) {
 
         guard let publicKey = SecKeyCopyPublicKey(privateKey) else { throw TrustStoreError.publicKeyExportFailed }
