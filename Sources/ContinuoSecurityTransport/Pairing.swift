@@ -99,9 +99,9 @@ public enum Pairing {
 /// A Curve25519 key-agreement key pair for one pairing attempt, wrapping
 /// CryptoKit behind a small, mockable surface.
 ///
-/// For the long-term identity key that TLS later pins, reuse the same
-/// `publicKeyRawRepresentation`; the network layer stores the *peer's* value in
-/// the Keychain as the trust anchor.
+/// This is NOT the identity TLS pins. The pin is the SHA-256 of the peer's P-256
+/// SubjectPublicKeyInfo (`TLSFingerprint.ofSPKI`, built by `IdentityFactory`),
+/// which `KeychainPinStore` keeps as the trust anchor.
 public struct PairingKeyPair: Sendable {
     private let privateKey: Curve25519.KeyAgreement.PrivateKey
 
